@@ -5,25 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2M - Agência de Programação e Soluções Digitais</title>
   
-  <!-- Favicon / Logo na aba do navegador -->
+  <!-- Favicon / Logo na aba -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B0F17'/><text x='50%' y='65%' font-size='50' font-weight='bold' fill='%238B5CF6' text-anchor='middle' font-family='sans-serif'>2M</text></svg>">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
           colors: {
             brand: {
               dark: '#0B0F17',
@@ -36,7 +27,6 @@
           boxShadow: {
             'neon-purple': '0 0 25px rgba(139, 92, 246, 0.35)',
             'neon-cyan': '0 0 25px rgba(6, 182, 212, 0.35)',
-            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
           }
         }
       }
@@ -47,7 +37,7 @@
     body {
       background-color: #0B0F17;
       color: #F3F4F6;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       overflow-x: hidden;
     }
     .glass-panel {
@@ -64,7 +54,7 @@
     .glow-bg {
       position: absolute;
       border-radius: 50%;
-      filter: blur(120px);
+      filter: blur(100px);
       z-index: 0;
       pointer-events: none;
     }
@@ -72,24 +62,21 @@
 </head>
 <body class="relative min-h-screen">
 
-  <!-- Background Ambient Glows -->
-  <div class="glow-bg w-[500px] h-[500px] bg-purple-600/20 -top-40 -left-20"></div>
-  <div class="glow-bg w-[400px] h-[400px] bg-cyan-600/15 top-1/3 -right-20"></div>
-  <div class="glow-bg w-[600px] h-[600px] bg-violet-600/15 bottom-10 left-1/3"></div>
+  <!-- Glows de Fundo -->
+  <div class="glow-bg w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-purple-600/20 -top-40 -left-20"></div>
+  <div class="glow-bg w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-cyan-600/15 top-1/3 -right-20"></div>
 
   <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
       <nav class="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between">
-        <!-- Logo 2M -->
         <a href="#" class="flex items-center gap-2 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-violet to-brand-cyan flex items-center justify-center font-extrabold text-white text-xl shadow-neon-purple group-hover:scale-105 transition-transform">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-violet to-brand-cyan flex items-center justify-center font-extrabold text-white text-xl shadow-neon-purple">
             2M
           </div>
           <span class="text-xl font-bold tracking-tight text-white">Programação</span>
         </a>
 
-        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
           <a href="#servicos" class="hover:text-brand-cyan transition-colors">Serviços</a>
           <a href="#portfolio" class="hover:text-brand-cyan transition-colors">Projetos</a>
@@ -98,10 +85,8 @@
           <a href="#contato" class="hover:text-brand-cyan transition-colors">Contato</a>
         </div>
 
-        <!-- CTA Header -->
-        <a href="https://wa.me/5518996431600?text=Olá!%20Vim%20pelo%20site%20da%202M%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-violet to-brand-purple hover:opacity-90 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all shadow-neon-purple hover:shadow-lg hover:-translate-y-0.5">
-          <i data-lucide="message-square" class="w-4 h-4"></i>
-          Falar no WhatsApp
+        <a href="https://wa.me/5518996431600?text=Olá!%20Vim%20pelo%20site%20da%202M%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-violet to-brand-purple hover:opacity-90 text-white font-semibold px-4 py-2 rounded-xl text-xs sm:text-sm transition-all shadow-neon-purple">
+          <span>💬</span> Falar no WhatsApp
         </a>
       </nav>
     </div>
@@ -123,17 +108,14 @@
     </p>
 
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://wa.me/5518996431600?text=Olá!%20Quero%20iniciar%20meu%20projeto%20com%20a%202M." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-violet to-brand-cyan hover:opacity-95 text-white font-bold px-8 py-4 rounded-xl text-lg shadow-neon-purple transition-all hover:scale-105">
-        <i data-lucide="phone-call" class="w-5 h-5"></i>
-        Iniciar Projeto Agora
+      <a href="https://wa.me/5518996431600?text=Olá!%20Quero%20iniciar%20meu%20projeto%20com%20a%202M." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-violet to-brand-cyan text-white font-bold px-8 py-4 rounded-xl text-lg shadow-neon-purple hover:scale-105 transition-all">
+        <span>📲</span> Iniciar Projeto Agora
       </a>
-      <a href="#calculadora" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-panel text-gray-200 hover:text-white font-semibold px-8 py-4 rounded-xl text-lg hover:border-gray-500 transition-all">
-        <i data-lucide="calculator" class="w-5 h-5 text-brand-cyan"></i>
-        Simular Valor
+      <a href="#calculadora" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-panel text-gray-200 font-semibold px-8 py-4 rounded-xl text-lg hover:border-gray-500 transition-all">
+        <span>🧮</span> Simular Valor
       </a>
     </div>
 
-    <!-- Indicadores -->
     <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-gray-800/60">
       <div>
         <h3 class="text-3xl font-extrabold text-white">100%</h3>
@@ -162,161 +144,72 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass-panel p-8 rounded-2xl hover:border-brand-purple/50 transition-all hover:-translate-y-1 group">
-        <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-brand-purple mb-6 group-hover:bg-brand-purple group-hover:text-white transition-all">
-          <i data-lucide="globe" class="w-7 h-7"></i>
-        </div>
+      <div class="glass-panel p-8 rounded-2xl border-gray-800">
+        <div class="text-3xl mb-4">🌐</div>
         <h3 class="text-xl font-bold text-white mb-3">Landing Pages de Alta Conversão</h3>
         <p class="text-gray-400 text-sm leading-relaxed">
-          Páginas focadas em capturar clientes e gerar vendas. Design responsivo otimizado para celular e campanhas de anúncios.
+          Páginas focadas em capturar clientes e gerar vendas. Design responsivo otimizado para celular.
         </p>
       </div>
 
-      <div class="glass-panel p-8 rounded-2xl hover:border-brand-cyan/50 transition-all hover:-translate-y-1 group">
-        <div class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-brand-cyan mb-6 group-hover:bg-brand-cyan group-hover:text-white transition-all">
-          <i data-lucide="layout" class="w-7 h-7"></i>
-        </div>
+      <div class="glass-panel p-8 rounded-2xl border-gray-800">
+        <div class="text-3xl mb-4">💻</div>
         <h3 class="text-xl font-bold text-white mb-3">Sites Institucionais</h3>
         <p class="text-gray-400 text-sm leading-relaxed">
-          Apresente sua empresa, produtos e serviços de forma profissional e passe máxima credibilidade no mercado.
+          Apresente sua empresa, produtos e serviços de forma profissional e passe máxima credibilidade.
         </p>
       </div>
 
-      <div class="glass-panel p-8 rounded-2xl hover:border-brand-purple/50 transition-all hover:-translate-y-1 group">
-        <div class="w-14 h-14 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-brand-violet mb-6 group-hover:bg-brand-violet group-hover:text-white transition-all">
-          <i data-lucide="code" class="w-7 h-7"></i>
-        </div>
+      <div class="glass-panel p-8 rounded-2xl border-gray-800">
+        <div class="text-3xl mb-4">⚡</div>
         <h3 class="text-xl font-bold text-white mb-3">Sistemas & Automações</h3>
         <p class="text-gray-400 text-sm leading-relaxed">
-          Desenvolvimento de plataformas Web personalizadas, integração de sistemas e automações para otimizar processos.
+          Desenvolvimento de plataformas Web personalizadas e automações para otimizar seus processos.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- NOVO: GALERIA / PORTFÓLIO -->
-  <section id="portfolio" class="py-20 px-4 max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
-      <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Trabalhos & Estilos</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">Modelos de <span class="text-gradient">Projetos</span></h2>
-      <p class="text-gray-400 mt-4 text-base">Veja o padrão visual e de qualidade que entregamos para nossos clientes.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Exemplo 1 -->
-      <div class="glass-panel rounded-2xl overflow-hidden border-gray-800 hover:border-brand-purple/50 transition-all group">
-        <div class="h-48 bg-gradient-to-br from-purple-900/40 to-slate-900 flex items-center justify-center relative p-6">
-          <div class="w-full h-full rounded-lg bg-slate-900/90 border border-gray-700/80 p-3 shadow-2xl flex flex-col gap-2">
-            <div class="flex items-center gap-1.5 border-b border-gray-800 pb-2">
-              <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-            </div>
-            <div class="h-4 bg-brand-purple/30 rounded w-1/2"></div>
-            <div class="h-3 bg-gray-800 rounded w-3/4"></div>
-            <div class="h-8 bg-brand-cyan/20 rounded mt-auto flex items-center px-2">
-              <div class="h-2 bg-brand-cyan rounded w-12"></div>
-            </div>
-          </div>
-        </div>
-        <div class="p-6">
-          <span class="text-xs text-brand-cyan font-bold">Landing Page</span>
-          <h3 class="text-lg font-bold text-white mt-1">Página de Vendas de Alta Conversão</h3>
-          <p class="text-gray-400 text-xs mt-2">Otimizada para carregar em menos de 2 segundos no mobile.</p>
-        </div>
-      </div>
-
-      <!-- Exemplo 2 -->
-      <div class="glass-panel rounded-2xl overflow-hidden border-gray-800 hover:border-brand-cyan/50 transition-all group">
-        <div class="h-48 bg-gradient-to-br from-cyan-900/40 to-slate-900 flex items-center justify-center relative p-6">
-          <div class="w-full h-full rounded-lg bg-slate-900/90 border border-gray-700/80 p-3 shadow-2xl flex flex-col gap-2">
-            <div class="flex items-center gap-1.5 border-b border-gray-800 pb-2">
-              <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-            </div>
-            <div class="h-4 bg-brand-cyan/30 rounded w-2/3"></div>
-            <div class="grid grid-cols-2 gap-2 my-auto">
-              <div class="h-8 bg-gray-800/80 rounded"></div>
-              <div class="h-8 bg-gray-800/80 rounded"></div>
-            </div>
-          </div>
-        </div>
-        <div class="p-6">
-          <span class="text-xs text-brand-purple font-bold">Site Institucional</span>
-          <h3 class="text-lg font-bold text-white mt-1">Site Corporativo Completo</h3>
-          <p class="text-gray-400 text-xs mt-2">Estrutura elegante com seções de serviços e contato via WhatsApp.</p>
-        </div>
-      </div>
-
-      <!-- Exemplo 3 -->
-      <div class="glass-panel rounded-2xl overflow-hidden border-gray-800 hover:border-brand-purple/50 transition-all group">
-        <div class="h-48 bg-gradient-to-br from-violet-900/40 to-slate-900 flex items-center justify-center relative p-6">
-          <div class="w-full h-full rounded-lg bg-slate-900/90 border border-gray-700/80 p-3 shadow-2xl flex flex-col gap-2">
-            <div class="flex items-center gap-1.5 border-b border-gray-800 pb-2">
-              <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-            </div>
-            <div class="flex gap-2 h-full items-center">
-              <div class="w-1/3 h-full bg-gray-800 rounded"></div>
-              <div class="w-2/3 h-full bg-brand-purple/20 rounded"></div>
-            </div>
-          </div>
-        </div>
-        <div class="p-6">
-          <span class="text-xs text-brand-cyan font-bold">Sistema Web</span>
-          <h3 class="text-lg font-bold text-white mt-1">Painel / Plataforma Sob Medida</h3>
-          <p class="text-gray-400 text-xs mt-2">Sistemas interativos e gerenciadores personalizados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CALCULADORA / SIMULADOR COM PREÇOS VALORIZADOS -->
+  <!-- SIMULADOR -->
   <section id="calculadora" class="py-20 px-4 max-w-4xl mx-auto relative z-10">
-    <div class="glass-panel p-8 sm:p-12 rounded-3xl border-brand-purple/30 shadow-2xl relative overflow-hidden">
+    <div class="glass-panel p-8 sm:p-12 rounded-3xl border-brand-purple/30 shadow-2xl">
       <div class="text-center mb-10">
         <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Simulação Instantânea</span>
         <h2 class="text-3xl font-extrabold text-white mt-2">Calcule a estimativa do seu projeto</h2>
-        <p class="text-gray-400 text-sm mt-2">Selecione o tipo de projeto e adicionais para ver o valor estimado</p>
       </div>
 
       <div class="space-y-6">
-        <!-- Tipo de Projeto com Novos Preços -->
         <div>
           <label class="block text-sm font-semibold text-gray-300 mb-2">1. Qual o tipo de projeto?</label>
-          <select id="calc-type" onchange="calculateBudget()" class="w-full bg-slate-900/90 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan">
+          <select id="calc-type" onchange="calculateBudget()" class="w-full bg-slate-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan">
             <option value="450" data-time="3 a 5 dias">Landing Page / Página de Vendas (R$ 450,00)</option>
             <option value="850" data-time="7 a 10 dias">Site Institucional Completo (R$ 850,00)</option>
             <option value="1500" data-time="15 a 25 dias">Sistema Web / Plataforma Personalizada (R$ 1.500,00)</option>
           </select>
         </div>
 
-        <!-- Recursos Extras com Novos Preços -->
         <div>
           <label class="block text-sm font-semibold text-gray-300 mb-2">2. Recursos adicionais desejados:</label>
           <div class="grid sm:grid-cols-2 gap-3">
-            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer hover:border-gray-700">
-              <input type="checkbox" value="100" onchange="calculateBudget()" class="calc-addon rounded bg-gray-800 border-gray-700 text-brand-purple focus:ring-0">
-              <span class="text-sm text-gray-300">Integração WhatsApp + Formulário (+R$ 100)</span>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer">
+              <input type="checkbox" value="100" onchange="calculateBudget()" class="calc-addon rounded">
+              <span class="text-sm text-gray-300">Integração WhatsApp (+R$ 100)</span>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer hover:border-gray-700">
-              <input type="checkbox" value="150" onchange="calculateBudget()" class="calc-addon rounded bg-gray-800 border-gray-700 text-brand-purple focus:ring-0">
-              <span class="text-sm text-gray-300">Otimização SEO (Google) (+R$ 150)</span>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer">
+              <input type="checkbox" value="150" onchange="calculateBudget()" class="calc-addon rounded">
+              <span class="text-sm text-gray-300">Otimização SEO Google (+R$ 150)</span>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer hover:border-gray-700">
-              <input type="checkbox" value="200" onchange="calculateBudget()" class="calc-addon rounded bg-gray-800 border-gray-700 text-brand-purple focus:ring-0">
-              <span class="text-sm text-gray-300">Painel de Edição de Conteúdo (+R$ 200)</span>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer">
+              <input type="checkbox" value="200" onchange="calculateBudget()" class="calc-addon rounded">
+              <span class="text-sm text-gray-300">Painel de Edição (+R$ 200)</span>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer hover:border-gray-700">
-              <input type="checkbox" value="120" onchange="calculateBudget()" class="calc-addon rounded bg-gray-800 border-gray-700 text-brand-purple focus:ring-0">
-              <span class="text-sm text-gray-300">Animações & Efeitos Especiais (+R$ 120)</span>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-gray-800 cursor-pointer">
+              <input type="checkbox" value="120" onchange="calculateBudget()" class="calc-addon rounded">
+              <span class="text-sm text-gray-300">Animações Especial (+R$ 120)</span>
             </label>
           </div>
         </div>
 
-        <!-- Resultado -->
         <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <span class="text-xs text-gray-400 block">Estimativa a partir de:</span>
@@ -324,80 +217,15 @@
             <span class="text-xs text-brand-cyan block mt-1" id="total-time">Prazo estimado: 3 a 5 dias</span>
           </div>
 
-          <button onclick="sendCalculatedBudget()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg">
-            <i data-lucide="message-square" class="w-5 h-5"></i>
-            Enviar Simulação no WhatsApp
+          <button onclick="sendCalculatedBudget()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg">
+            <span>💬</span> Enviar Simulação no WhatsApp
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NOVO: AVALIAÇÕES / DEPOIMENTOS -->
-  <section class="py-20 px-4 max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
-      <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Prova Social</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2">O que dizem sobre a <span class="text-gradient">2M</span></h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass-panel p-6 rounded-2xl border-gray-800">
-        <div class="flex text-yellow-400 gap-1 mb-4">
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-        </div>
-        <p class="text-gray-300 text-sm leading-relaxed">"O atendimento foi sensacional e a entrega super rápida. A landing page ficou moderna e já começou a gerar contatos no primeiro dia!"</p>
-        <div class="mt-6 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-brand-purple flex items-center justify-center text-white font-bold text-sm">RC</div>
-          <div>
-            <div class="text-sm font-bold text-white">Rodrigo Costa</div>
-            <div class="text-xs text-gray-500">Consultoria Digital</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass-panel p-6 rounded-2xl border-gray-800">
-        <div class="flex text-yellow-400 gap-1 mb-4">
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-        </div>
-        <p class="text-gray-300 text-sm leading-relaxed">"Excelente suporte! Tiraram todas as minhas dúvidas e deixaram o site exatamente do jeito que eu precisava. Recomendadíssimo."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-brand-cyan flex items-center justify-center text-white font-bold text-sm">AM</div>
-          <div>
-            <div class="text-sm font-bold text-white">Amanda Martins</div>
-            <div class="text-xs text-gray-500">Estética & Saúde</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass-panel p-6 rounded-2xl border-gray-800">
-        <div class="flex text-yellow-400 gap-1 mb-4">
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-          <i data-lucide="star" class="w-4 h-4 fill-yellow-400"></i>
-        </div>
-        <p class="text-gray-300 text-sm leading-relaxed">"Preço muito justo pela qualidade entregue. O código é leve e o site abre instantaneamente no celular."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-brand-violet flex items-center justify-center text-white font-bold text-sm">LF</div>
-          <div>
-            <div class="text-sm font-bold text-white">Lucas Ferreira</div>
-            <div class="text-xs text-gray-500">Comércio Local</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOVO: FAQ (PERGUNTAS FREQUENTES) -->
+  <!-- FAQ -->
   <section id="faq" class="py-20 px-4 max-w-4xl mx-auto relative z-10">
     <div class="text-center mb-12">
       <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Tire suas dúvidas</span>
@@ -406,79 +234,53 @@
 
     <div class="space-y-4">
       <div class="glass-panel p-6 rounded-2xl">
-        <h4 class="text-lg font-bold text-white flex items-center gap-2">
-          <i data-lucide="help-circle" class="w-5 h-5 text-brand-cyan"></i>
-          Em quanto tempo meu site fica pronto?
-        </h4>
-        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-          O prazo médio para Landing Pages é de 3 a 5 dias úteis após o envio das informações. Sites maiores podem levar de 7 a 15 dias.
-        </p>
+        <h4 class="text-lg font-bold text-white">❓ Em quanto tempo meu site fica pronto?</h4>
+        <p class="text-gray-400 text-sm mt-2">O prazo médio para Landing Pages é de 3 a 5 dias úteis.</p>
       </div>
 
       <div class="glass-panel p-6 rounded-2xl">
-        <h4 class="text-lg font-bold text-white flex items-center gap-2">
-          <i data-lucide="help-circle" class="w-5 h-5 text-brand-purple"></i>
-          O site funciona bem no celular?
-        </h4>
-        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-          Sim! Todos os projetos criados pela 2M são 100% responsivos e otimizados para funcionar perfeitamente em celulares, tablets e computadores.
-        </p>
+        <h4 class="text-lg font-bold text-white">❓ O site funciona bem no celular?</h4>
+        <p class="text-gray-400 text-sm mt-2">Sim! É otimizado e ultra-rápido para carregar em qualquer smartphone.</p>
       </div>
 
       <div class="glass-panel p-6 rounded-2xl">
-        <h4 class="text-lg font-bold text-white flex items-center gap-2">
-          <i data-lucide="help-circle" class="w-5 h-5 text-brand-cyan"></i>
-          Como funciona a forma de pagamento?
-        </h4>
-        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-          Trabalhamos com entrada de 50% para iniciar o projeto e 50% somente após a aprovação e entrega final do site. Aceitamos PIX e Cartão de Crédito.
-        </p>
+        <h4 class="text-lg font-bold text-white">❓ Como funciona a forma de pagamento?</h4>
+        <p class="text-gray-400 text-sm mt-2">50% no início e 50% após a aprovação do projeto. Aceitamos PIX e Cartão.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO E MENSAGEM RÁPIDA -->
+  <!-- MENSAGEM RÁPIDA -->
   <section id="contato" class="py-20 px-4 max-w-4xl mx-auto relative z-10">
     <div class="glass-panel p-8 sm:p-12 rounded-3xl text-center border-brand-purple/30">
-      <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Mensagem Rápida</span>
+      <span class="text-xs font-bold text-brand-cyan uppercase tracking-wider">Contato Direto</span>
       <h2 class="text-3xl font-extrabold text-white mt-2">Fale conosco pelo WhatsApp</h2>
-      <p class="text-gray-400 text-sm mt-2 max-w-lg mx-auto">
-        Digite seu nome e sua mensagem abaixo para nos chamar diretamente no telefone **(18) 99643-1600**.
-      </p>
 
       <form id="contact-form" onsubmit="handleDirectWhatsApp(event)" class="mt-8 space-y-4 max-w-md mx-auto text-left">
         <div>
           <label class="block text-xs font-medium text-gray-400 mb-1">Seu Nome</label>
-          <input type="text" id="user-name" required placeholder="Digite seu nome" class="w-full bg-slate-900/90 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan">
+          <input type="text" id="user-name" required placeholder="Digite seu nome" class="w-full bg-slate-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan">
         </div>
 
         <div>
           <label class="block text-xs font-medium text-gray-400 mb-1">Como podemos te ajudar?</label>
-          <textarea id="user-message" rows="3" required placeholder="Conte um pouco sobre o site ou projeto que precisa..." class="w-full bg-slate-900/90 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan"></textarea>
+          <textarea id="user-message" rows="3" required placeholder="Conte um pouco sobre seu projeto..." class="w-full bg-slate-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan"></textarea>
         </div>
 
-        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-bold py-4 rounded-xl transition-all shadow-lg text-base">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          Enviar Mensagem no WhatsApp
+        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold py-4 rounded-xl shadow-lg text-base">
+          <span>💬</span> Enviar Mensagem no WhatsApp
         </button>
       </form>
-
-      <div class="mt-8 pt-6 border-t border-gray-800 text-xs text-gray-400">
-        Telefone de contato: <strong class="text-white">+55 18 99643-1600</strong>
-      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-8 border-t border-gray-800/80 text-center text-xs text-gray-500 relative z-10">
+  <footer class="py-8 border-t border-gray-800 text-center text-xs text-gray-500 relative z-10">
     <p>© 2026 2M - Agência de Programação. Todos os direitos reservados.</p>
     <p class="mt-1 text-gray-600">Contato: +55 (18) 99643-1600</p>
   </footer>
 
-  <!-- SCRIPT JS -->
   <script>
-    lucide.createIcons();
-
     function calculateBudget() {
       const typeSelect = document.getElementById('calc-type');
       const basePrice = parseInt(typeSelect.value);
@@ -492,7 +294,6 @@
       });
 
       const total = basePrice + addonsTotal;
-      
       document.getElementById('total-price').innerText = `R$ ${total},00`;
       document.getElementById('total-time').innerText = `Prazo estimado: ${timeEstimate}`;
     }
@@ -504,7 +305,6 @@
       const timeEstimate = document.getElementById('total-time').innerText;
 
       const message = `Olá 2M! Fiz uma simulação pelo site:%0A%0A- *Projeto:* ${projectName}%0A- *Valor Estimado:* ${totalPrice}%0A- *${timeEstimate}*%0A%0AGostaria de conversar sobre esse projeto!`;
-
       window.open(`https://wa.me/5518996431600?text=${message}`, '_blank');
     }
 
@@ -514,7 +314,6 @@
       const msg = document.getElementById('user-message').value;
 
       const fullMessage = `Olá 2M! Meu nome é *${name}* e gostaria de informações:%0A%0A"${msg}"`;
-
       window.open(`https://wa.me/5518996431600?text=${fullMessage}`, '_blank');
     }
   </script>
