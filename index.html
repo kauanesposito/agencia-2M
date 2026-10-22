@@ -3,163 +3,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2M - Agência de Programação e Soluções Digitais</title>
+  <title>2M Programação | Soluções Digitais & Alta Performance</title>
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B0F17'/><text x='50%' y='65%' font-size='50' font-weight='bold' fill='%238B5CF6' text-anchor='middle' font-family='sans-serif'>2M</text></svg>">
+  <!-- Favicon Luxuoso 2M -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230D0F12'/><text x='50%' y='65%' font-size='45' font-weight='bold' fill='%23D4AF37' text-anchor='middle' font-family='sans-serif'>2M</text></svg>">
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0D0F12',
+              card: '#14181F',
+              border: '#222936',
+              gold: '#D4AF37',
+              goldHover: '#C5A028',
+              muted: '#8A94A6',
+            }
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
     body {
-      background-color: #0B0F17;
-      color: #F3F4F6;
-      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #0D0F12;
+      color: #F1F5F9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
-    .glass-card {
-      background-color: #121826;
-      border: 1px solid #1E293B;
-    }
-    .text-gradient {
-      background: linear-gradient(135deg, #A855F7 0%, #06B6D4 100%);
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .card-luxury {
+      background-color: #14181F;
+      border: 1px solid #222936;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .card-luxury:hover {
+      border-color: rgba(212, 175, 55, 0.4);
     }
   </style>
 </head>
 <body class="min-h-screen">
 
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0B0F17]/90 border-b border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-xl bg-purple-600 flex items-center justify-center font-extrabold text-white text-lg">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0D0F12]/95 border-b border-gray-800/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <!-- Logo 2M -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700 flex items-center justify-center text-black font-extrabold text-xl shadow-sm">
           2M
         </div>
-        <span class="text-lg font-bold text-white">Programação</span>
+        <div class="flex flex-col">
+          <span class="text-base font-bold tracking-wider text-white uppercase leading-none">2M</span>
+          <span class="text-[10px] text-brand-gold tracking-widest font-semibold uppercase mt-0.5">Programação</span>
+        </div>
       </a>
 
-      <a href="https://wa.me/5518996431600?text=Olá!%20Vim%20pelo%20site%20da%202M%20e%20gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 py-2 rounded-xl text-xs sm:text-sm">
-        💬 WhatsApp
+      <!-- Menu Navegação -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-wider text-gray-400">
+        <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
+        <a href="#calculadora" class="hover:text-white transition-colors">Orçamento</a>
+        <a href="#diferenciais" class="hover:text-white transition-colors">Diferenciais</a>
+        <a href="#contato" class="hover:text-white transition-colors">Contato</a>
+      </nav>
+
+      <!-- CTA Botão WhatsApp com Ícone Oficial -->
+      <a href="https://wa.me/5518996431600?text=Olá!%20Vim%20pelo%20site%20da%202M%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all shadow-sm">
+        <!-- Ícone WhatsApp Oficial -->
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        Atendimento WhatsApp
       </a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="pt-32 pb-16 px-4 max-w-5xl mx-auto text-center">
-    <div class="inline-block px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-6">
-      🟢 Desenvolvimento Sob Medida & Alta Performance
+  <!-- HERO SECTION LUXUOSA -->
+  <section class="pt-36 pb-20 px-4 max-w-5xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-card border border-brand-border text-xs font-semibold text-gray-300 mb-8">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      Agência de Desenvolvimento & Engenharia de Software
     </div>
     
-    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
-      Sua empresa com a presença digital que <span class="text-gradient">realmente vende</span>
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+      Construímos a presença digital que eleva a <span class="gold-gradient-text">autoridade da sua marca</span>
     </h1>
 
-    <p class="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-      Landing Pages, Sites Institucionais e Sistemas Web rápidos, modernos e focados em fechar novos clientes.
+    <p class="mt-6 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
+      Projetos web sob medida com arquitetura limpa, carregamento ultra-rápido e foco total na conversão de novos clientes.
     </p>
 
-    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-      <a href="https://wa.me/5518996431600?text=Olá!%20Quero%20iniciar%20meu%20projeto%20com%20a%202M." target="_blank" class="w-full sm:w-auto bg-purple-600 text-white font-bold px-6 py-3.5 rounded-xl text-base">
-        📲 Iniciar Projeto
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://wa.me/5518996431600?text=Olá!%20Quero%20iniciar%20meu%20projeto%20com%20a%202M." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:opacity-95 text-black font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all shadow-lg">
+        <!-- Ícone WhatsApp Oficial -->
+        <svg class="w-5 h-5 fill-current text-black" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        Iniciar Projeto no WhatsApp
       </a>
-      <a href="#calculadora" class="w-full sm:w-auto glass-card text-gray-200 font-semibold px-6 py-3.5 rounded-xl text-base">
-        🧮 Simular Valor
+      <a href="#calculadora" class="w-full sm:w-auto card-luxury text-gray-200 font-semibold px-8 py-4 rounded-xl text-sm tracking-wider uppercase">
+        Simular Orçamento
       </a>
+    </div>
+
+    <!-- Indicadores -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-brand-border">
+      <div>
+        <h3 class="text-2xl font-bold text-white">100%</h3>
+        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Compromisso & Entrega</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold text-brand-gold">Segurança</h3>
+        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Código Criptografado</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold text-white">Suporte</h3>
+        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Pós-Lançamento Direto</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold text-brand-gold">Performance</h3>
+        <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Otimização para Celular</p>
+      </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section id="servicos" class="py-12 px-4 max-w-5xl mx-auto">
-    <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-8">Nossos <span class="text-gradient">Serviços</span></h2>
+  <section id="servicos" class="py-16 px-4 max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold text-brand-gold uppercase tracking-widest">Soluções Especializadas</span>
+      <h2 class="text-3xl font-bold text-white mt-2">Nossos Serviços</h2>
+    </div>
 
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="glass-card p-6 rounded-2xl">
-        <div class="text-2xl mb-2">🌐</div>
-        <h3 class="text-lg font-bold text-white mb-2">Landing Pages</h3>
-        <p class="text-gray-400 text-xs sm:text-sm">Páginas focadas em conversão rápida de clientes pelo celular.</p>
+      <div class="card-luxury p-8 rounded-2xl">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-brand-gold text-2xl mb-6">
+          ⚡
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Landing Pages de Alta Conversão</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Páginas estratégicas e focadas em converter visitantes em clientes pagantes. Carregamento instantâneo no celular.
+        </p>
       </div>
 
-      <div class="glass-card p-6 rounded-2xl">
-        <div class="text-2xl mb-2">💻</div>
+      <div class="card-luxury p-8 rounded-2xl">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-brand-gold text-2xl mb-6">
+          🌐
+        </div>
         <h3 class="text-lg font-bold text-white mb-2">Sites Institucionais</h3>
-        <p class="text-gray-400 text-xs sm:text-sm">Apresentação profissional e completa da sua marca no mercado.</p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Desenvolvimento de portais corporativos modernos para transmitir autoridade e confiança ao seu mercado.
+        </p>
       </div>
 
-      <div class="glass-card p-6 rounded-2xl">
-        <div class="text-2xl mb-2">⚡</div>
-        <h3 class="text-lg font-bold text-white mb-2">Sistemas & Automações</h3>
-        <p class="text-gray-400 text-xs sm:text-sm">Soluções sob medida para automatizar os processos do seu negócio.</p>
+      <div class="card-luxury p-8 rounded-2xl">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-brand-gold text-2xl mb-6">
+          ⚙️
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Sistemas & Automações Web</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Sistemas personalizados, integrações de APIs e soluções que automatizam os processos internos do seu negócio.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- SIMULADOR -->
-  <section id="calculadora" class="py-12 px-4 max-w-3xl mx-auto">
-    <div class="glass-card p-6 sm:p-8 rounded-2xl">
-      <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-6">Simulador de Orçamento</h2>
+  <!-- SIMULADOR DE ORÇAMENTO -->
+  <section id="calculadora" class="py-16 px-4 max-w-3xl mx-auto">
+    <div class="card-luxury p-8 sm:p-10 rounded-3xl border-brand-border">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold text-brand-gold uppercase tracking-widest">Simulação Transparente</span>
+        <h2 class="text-2xl font-bold text-white mt-1">Calcule a Estimativa do Seu Projeto</h2>
+      </div>
 
-      <div class="space-y-4">
+      <div class="space-y-6">
         <div>
-          <label class="block text-xs font-semibold text-gray-300 mb-1">Qual o tipo de projeto?</label>
-          <select id="calc-type" onchange="calculateBudget()" class="w-full bg-slate-900 border border-gray-700 rounded-xl px-3 py-2.5 text-white text-sm">
-            <option value="450" data-time="3 a 5 dias">Landing Page / Página de Vendas (R$ 450,00)</option>
-            <option value="850" data-time="7 a 10 dias">Site Institucional Completo (R$ 850,00)</option>
-            <option value="1500" data-time="15 a 25 dias">Sistema Web / Plataforma (R$ 1.500,00)</option>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">1. Selecione a Categoria do Projeto</label>
+          <select id="calc-type" onchange="calculateBudget()" class="w-full bg-[#0D0F12] border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand-gold focus:outline-none">
+            <option value="450" data-time="3 a 5 dias úteis">Landing Page / Página de Vendas (R$ 450,00)</option>
+            <option value="850" data-time="7 a 10 dias úteis">Site Institucional Corporativo (R$ 850,00)</option>
+            <option value="1500" data-time="15 a 25 dias úteis">Sistema Web Sob Medida (R$ 1.500,00)</option>
           </select>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-gray-300 mb-1">Adicionais:</label>
-          <div class="grid sm:grid-cols-2 gap-2 text-xs">
-            <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900 border border-gray-800">
-              <input type="checkbox" value="100" onchange="calculateBudget()" class="calc-addon">
-              <span class="text-gray-300">Integração WhatsApp (+R$ 100)</span>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">2. Recursos Adicionais</label>
+          <div class="grid sm:grid-cols-2 gap-3 text-xs">
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-[#0D0F12] border border-brand-border cursor-pointer hover:border-gray-700">
+              <input type="checkbox" value="100" onchange="calculateBudget()" class="calc-addon rounded accent-amber-500">
+              <span class="text-gray-300">Integração WhatsApp + Formulário (+R$ 100)</span>
             </label>
-            <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900 border border-gray-800">
-              <input type="checkbox" value="150" onchange="calculateBudget()" class="calc-addon">
-              <span class="text-gray-300">Otimização SEO (+R$ 150)</span>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-[#0D0F12] border border-brand-border cursor-pointer hover:border-gray-700">
+              <input type="checkbox" value="150" onchange="calculateBudget()" class="calc-addon rounded accent-amber-500">
+              <span class="text-gray-300">Otimização para Busca Google / SEO (+R$ 150)</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-[#0D0F12] border border-brand-border cursor-pointer hover:border-gray-700">
+              <input type="checkbox" value="200" onchange="calculateBudget()" class="calc-addon rounded accent-amber-500">
+              <span class="text-gray-300">Painel de Gerenciamento de Conteúdo (+R$ 200)</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-[#0D0F12] border border-brand-border cursor-pointer hover:border-gray-700">
+              <input type="checkbox" value="120" onchange="calculateBudget()" class="calc-addon rounded accent-amber-500">
+              <span class="text-gray-300">Animações & Design Premium (+R$ 120)</span>
             </label>
           </div>
         </div>
 
-        <div class="pt-4 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="pt-6 border-t border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div class="text-2xl font-bold text-cyan-400" id="total-price">R$ 450,00</div>
-            <span class="text-xs text-gray-400" id="total-time">Prazo: 3 a 5 dias</span>
+            <span class="text-xs text-gray-400 block uppercase">Estimativa Final</span>
+            <div class="text-3xl font-extrabold text-brand-gold" id="total-price">R$ 450,00</div>
+            <span class="text-xs text-gray-400 block mt-0.5" id="total-time">Prazo estimado: 3 a 5 dias úteis</span>
           </div>
 
-          <button onclick="sendCalculatedBudget()" class="w-full sm:w-auto bg-emerald-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm">
-            💬 Enviar Simulação
+          <button onclick="sendCalculatedBudget()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Enviar Orçamento no WhatsApp
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MENSAGEM RÁPIDA -->
-  <section id="contato" class="py-12 px-4 max-w-md mx-auto">
-    <div class="glass-card p-6 rounded-2xl text-center">
-      <h2 class="text-xl font-bold text-white">Fale conosco no WhatsApp</h2>
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="py-16 px-4 max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold text-brand-gold uppercase tracking-widest">Por que escolher a 2M</span>
+      <h2 class="text-3xl font-bold text-white mt-2">Diferenciais Competitivos</h2>
+    </div>
 
-      <form id="contact-form" onsubmit="handleDirectWhatsApp(event)" class="mt-4 space-y-3 text-left">
-        <div>
-          <input type="text" id="user-name" required placeholder="Seu nome" class="w-full bg-slate-900 border border-gray-700 rounded-xl px-3 py-2 text-white text-sm">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card-luxury p-6 rounded-2xl flex gap-4 items-start">
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-brand-gold font-bold text-lg shrink-0">
+          ✓
         </div>
         <div>
-          <textarea id="user-message" rows="3" required placeholder="Sua mensagem..." class="w-full bg-slate-900 border border-gray-700 rounded-xl px-3 py-2 text-white text-sm"></textarea>
+          <h4 class="text-base font-bold text-white">Transparência Total de Prazos</h4>
+          <p class="text-gray-400 text-xs mt-1 leading-relaxed">Alinhamos cada detalhe do projeto antes do início com entregas pontuais e cronograma garantido.</p>
         </div>
-        <button type="submit" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm">
-          💬 Enviar WhatsApp
+      </div>
+
+      <div class="card-luxury p-6 rounded-2xl flex gap-4 items-start">
+        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-brand-gold font-bold text-lg shrink-0">
+          ✓
+        </div>
+        <div>
+          <h4 class="text-base font-bold text-white">Otimização para o Google (SEO)</h4>
+          <p class="text-gray-400 text-xs mt-1 leading-relaxed">Código estruturado seguindo as melhores práticas globais para garantir boa indexação nas buscas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO DIRETO -->
+  <section id="contato" class="py-16 px-4 max-w-md mx-auto">
+    <div class="card-luxury p-8 rounded-3xl text-center">
+      <span class="text-xs font-bold text-brand-gold uppercase tracking-widest">Contato Direto</span>
+      <h2 class="text-2xl font-bold text-white mt-1">Fale com o Desenvolvedor</h2>
+      <p class="text-gray-400 text-xs mt-2">Envie uma mensagem e responderemos no seu WhatsApp em instantes.</p>
+
+      <form id="contact-form" onsubmit="handleDirectWhatsApp(event)" class="mt-6 space-y-3 text-left">
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1">Seu Nome</label>
+          <input type="text" id="user-name" required placeholder="Digite seu nome" class="w-full bg-[#0D0F12] border border-brand-border rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-brand-gold focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1">Como podemos te ajudar?</label>
+          <textarea id="user-message" rows="3" required placeholder="Descreva brevemente sua ideia ou projeto..." class="w-full bg-[#0D0F12] border border-brand-border rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-brand-gold focus:outline-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-md">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Iniciar Conversa no WhatsApp
         </button>
       </form>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-6 border-t border-gray-800 text-center text-xs text-gray-500">
-    <p>© 2026 2M - Agência de Programação (+55 18 99643-1600)</p>
+  <footer class="py-8 border-t border-brand-border text-center text-xs text-gray-500">
+    <p>© 2026 2M Programação & Desenvolvimento. Todos os direitos reservados.</p>
+    <p class="mt-1 text-gray-600">Atendimento Técnico: +55 (18) 99643-1600</p>
   </footer>
 
+  <!-- SCRIPT JS -->
   <script>
     function calculateBudget() {
       const typeSelect = document.getElementById('calc-type');
@@ -173,7 +308,7 @@
 
       const total = basePrice + addonsTotal;
       document.getElementById('total-price').innerText = `R$ ${total},00`;
-      document.getElementById('total-time').innerText = `Prazo: ${timeEstimate}`;
+      document.getElementById('total-time').innerText = `Prazo estimado: ${timeEstimate}`;
     }
 
     function sendCalculatedBudget() {
@@ -182,7 +317,7 @@
       const totalPrice = document.getElementById('total-price').innerText;
       const timeEstimate = document.getElementById('total-time').innerText;
 
-      const message = `Olá 2M! Fiz uma simulação pelo site:%0A%0A- *Projeto:* ${projectName}%0A- *Valor Estimado:* ${totalPrice}%0A- *${timeEstimate}*`;
+      const message = `Olá 2M Programação! Realizei uma simulação pelo site:%0A%0A- *Projeto:* ${projectName}%0A- *Valor Estimado:* ${totalPrice}%0A- *${timeEstimate}*%0A%0AGostaria de negociar esse projeto!`;
       window.open(`https://wa.me/5518996431600?text=${message}`, '_blank');
     }
 
@@ -191,7 +326,7 @@
       const name = document.getElementById('user-name').value;
       const msg = document.getElementById('user-message').value;
 
-      const fullMessage = `Olá 2M! Meu nome é *${name}*:%0A%0A"${msg}"`;
+      const fullMessage = `Olá 2M Programação! Meu nome é *${name}*:%0A%0A"${msg}"`;
       window.open(`https://wa.me/5518996431600?text=${fullMessage}`, '_blank');
     }
   </script>
